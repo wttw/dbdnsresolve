@@ -1,4 +1,4 @@
-=== dbdnsresolve
+# dbdnsresolve
 
 This is a quick and fairly dirty high performance DNS resolution tool,
 designed for quick overview MX surveying.
