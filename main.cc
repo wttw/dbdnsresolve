@@ -143,6 +143,9 @@ int main(int argc, char **argv)
           }
         }
       }
+      if (pending.size() == 0) {
+	continue;
+      }
       pendingquery *p = pending.front();
       pending.pop_front();
       adns_answer *answer;
@@ -166,12 +169,13 @@ int main(int argc, char **argv)
           ++pp;
         }
       }
+      //      std::cerr << "p->domain = " << p->domain << std::endl;
       t.prepared("put")(mx)(p->domain).exec();
       processed++;
       if((processed % 100) == 0) {
         std::cerr << boost::format("  %1% / %2% %|22t|%3%                    \r") % processed % total % p->domain;
       }
-      //      std::cerr << p->domain << " -> " << mx << "\n";
+      //            std::cerr << p->domain << " -> " << mx << "\n";
       delete p;
     }
     t.commit();
