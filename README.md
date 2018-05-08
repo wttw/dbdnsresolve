@@ -1,4 +1,4 @@
-=== dbdnsresolve
+# dbdnsresolve
 
 This is a quick and fairly dirty high performance DNS resolution tool,
 designed for quick overview MX surveying.
@@ -16,7 +16,7 @@ via 127.0.0.1.
 `dbdnsresolve --help` will display all the supported commandline flags.
 
 `dbdnsresolve --table=<tablename> --domain=<column> --result=<column>` is
-the minimum require set of options.
+the minimum required set of options.
 
 Build with "make", install to /usr/local/bin with "sudo make install".
 
